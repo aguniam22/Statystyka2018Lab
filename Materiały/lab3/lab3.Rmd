@@ -1,0 +1,88 @@
+---
+title: "Laboratorium 3"
+output: 
+  html_document: 
+    theme: paper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Podstawowe rozkłady zmiennych losowych
+
+Rozpatrzmy jednowymiarowe zmienne losowe. Nazewnictwo funckji związanych ze zmiennymi losowymi jest zestandaryzowane. Nazwy funkcji opisane są zgodnie ze schematem. 
+
+__[prefix] [nazwa rodziny rozkl] ()__
+
+#### prefixy
+
+- Litera **r** (od random) - generuje próbę prostą o liczebności n. Gdzie n to pierwszy argument funckji z określonego rozkładu.
+- Litera **p** (od probability) - wartość dystrybuanty danego rozkładu w punktach określonych przez wektor x (pierwszy arg funckji)
+- Litera **d** (od density) - wartość prawdopodobieństwa (bądź gęstości prawdopodobieństwa) danego rozkładu w punktach określoncyh przez wektor x. 
+-Litera **q** (od quantile) - wyznacza wartości kwantyli danego rozkładu.
+
+## Rozkłady
+
+```{r}
+# rozkład jednostajny
+runif(5)
+# rozkład normalny
+rnorm(10)
+rnorm(10, mean = 4, sd = 2)
+```
+
+Zgodnie z regułą 3 sigma prawdopodobieństwo, że zmienna losowa o standardowym rozkładzie normalnym przyjmie wartość mniejszą niż -3 lub większą od 3 jest bardzo małe. Prawdopodobieństwo to można wyznaczyć z dystrybuanty 
+
+```{r}
+pnorm(-3) + (1-pnorm(3))
+```
+
+Gęstość rozkładu w punktach -1,0,1 otrzymamy z:
+
+```{r}
+dnorm(-1:1, mean=0, sd=1)
+```
+
+Kwantyle dla rozkładu normalnego:
+
+```{r}
+qnorm(c(0.001,0.025,0.05,0.5,0.95,0.975,0.999))
+```
+
+Inne rozkłady:
+
+- _rbeta_ Rozkład Beta
+- _rchisq_ Rozkład Chi-kwadrat 
+- _rgamma_ Rozkład Gamma
+- _rlnorm_ Rozkład Log normalny
+- _rt_ Rozkład t-studenta
+- _rexp_ Rozkład Wykładniczy
+- _rbinom_ Rozkład Dwumianowy
+- _rnbinom_ Rozkład Ujemny dwumianowy
+- _rpois_ Rozkład Poissona
+
+
+### Estymacja parametrów rozkładu
+
+Esytmację parametrów wybranego rozkładu otrzymujemy korzystając z funkcji _fitdistr()_
+
+```{r}
+test <- rlnorm(100)
+test[1:10]
+MASS::fitdistr(test, "normal")
+MASS::fitdistr(test, "gamma")
+```
+
+
+## Statystyki opisowe
+
+## Analiza graficzna
+
+
+
+
+
+
+
+
