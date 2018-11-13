@@ -65,7 +65,7 @@ git push origin imieNazwisko
 #### RStudio
 ![](Bez tytułu.jpg)
 
-#### Pakiety
+#### Packages
 
 ```{r install, eval=FALSE}
 # install - just one time
@@ -85,19 +85,19 @@ getwd()
 list.files()
 ```
 
-Środowisko R możesz również zainstalować i używać w inny sposób:
+You can also try Anaconda:
 
 Download and install [Anaconda](https://www.anaconda.com/download/).
 
-W pakiecie tym otrzymujesz R Studio, ale również narzędzia do analiz danych w Pythonie.
+You get R studio and other tools for data analysis (in Python also).
 
-### Skróty R Studio
+### Most important keys in R Studio
 
-- _Ctrl(Cmd)+Shift+C_ - zakomentowanie lini bądź zbioru linii kodu
-- _Ctrl(Cmd)+Enter_ - wykonanie zaznaczonego kodu
-- W konsoli _Ctrl(Cmd)+Up_ - historia komend
-- _Ctrl+L_ - czyszczenie konsoli
-- Jak w każdej konsoli _Tab_ uzupełnia kod 
+- _Ctrl(Cmd)+Shift+C_ - comments line 
+- _Ctrl(Cmd)+Enter_ - run a code in console 
+- In Console _Ctrl(Cmd)+Up_ - history
+- _Ctrl+L_ - clean console
+- In Cosole _Tab_  
 - _Ctrl(Cmd)+Shift+K_ - kompilacja dokumentu
 
 ### Gdzie szukać informacji
@@ -117,20 +117,8 @@ W pakiecie tym otrzymujesz R Studio, ale również narzędzia do analiz danych w
 * _StackExchange_
 * **Książki** 
 
-### R jako kalkulator
-
-```{r}
-2+2
-4*7
-9/3.2
-3%%2
-sqrt(3)
-log(9)
-log(9,2)
-sin(pi/2)
-exp(1)
-```
-Jeżeli nie znasz jakiejś funkcji: 
+### Help in  R
+Info about functions: 
 ```{r}
 help("%%")
 ?log 
@@ -144,9 +132,9 @@ y <- 4
 
 y+2
 
-# lista wszystkich zmiennych
+# all features
 ls()
-# usuwanie zmiennych
+# delete features from environment
 rm(x)
 ls()
 ```
@@ -158,47 +146,6 @@ Znajdź informacje na temat następujących funkcji:
 3. _rm()_
 4. _"=="_
 
-
-
-
-
-
-<!-- ### Prosta analiza w R -->
-
-<!-- ```{r} -->
-<!-- # install.packages('gapminder') -->
-<!-- # zaladuj biblioteke -->
-<!-- library(gapminder) -->
-<!-- # zaladuj dane -->
-<!-- data("gapminder") -->
-<!-- # co wyświetli sama funkcja data() ?? -->
-<!-- data() -->
-<!-- # nagłówki  -->
-<!-- names(gapminder) -->
-<!-- # podsumowanie danych -->
-<!-- summary(gapminder) -->
-<!-- # analiza i odwołanie się do jednej zmiennej -->
-<!-- mean(gapminder$gdpPercap) -->
-<!-- # stworzenie nowego obiektu x i przypisanie do niego wartości średniej -->
-<!-- x <- mean(gapminder$gdpPercap) -->
-<!-- # wypisz wartość x -->
-<!-- x -->
-<!-- # ============ -->
-<!-- # Aby ułatwić sobie analizę jednego zbioru  -->
-<!-- # możesz dodać go bezpośrednio do swojego środowiska -->
-<!-- attach(gapminder) -->
-<!-- # uwaga! aby wyjść z tego ustawinie użyj detach(nazwa) -->
-<!-- # Dzięki attach możesz posługiwać się nazwami kolumn bez odnoszenia się do całej tabeli danych. -->
-<!-- mean(gdpPercap) -->
-<!-- mean(pop) -->
-<!-- # zobacz jaki rozkład mają twoje dane -->
-<!-- hist(lifeExp) -->
-<!-- # a populacja ?  -->
-<!-- hist(pop) -->
-<!-- # a może logarytm zmiennej ?  -->
-<!-- hist(log(pop)) -->
-
-<!-- ``` -->
 
 
 
