@@ -284,6 +284,24 @@ iris$nowy <- iris$Sepal.Width*2
 iris[ iris[, "Sepal.Length"]<5, c("Sepal.Length","nowy","Species")]
 ```
 
+### Tworzenie ramki danych z wektorów 
+
+```{r}
+FamilyNamas <- c('Ojeciec', 'Matka','siostra','brat','pies')
+FamilyAge <- c(53,52,15,8,3)
+FamilySex <- c('M','F','F','M','F')
+FamilyWeights <-c(92, 67, 45, 15, 3)
+
+Family <- data.frame(FamilyNamas,FamilyAge, FamilySex,FamilyWeights)
+
+str(Family)
+
+summary(Family)
+
+Family$FamilyAge
+
+```
+
 
 
 

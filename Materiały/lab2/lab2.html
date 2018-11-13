@@ -711,6 +711,32 @@ iris[ iris[, &quot;Sepal.Length&quot;]&lt;5, c(&quot;Sepal.Length&quot;,&quot;no
 ## 58           4.9  4.8 versicolor
 ## 107          4.9  5.0  virginica</code></pre>
 </div>
+<div id="tworzenie-ramki-danych-z-wektorow" class="section level3">
+<h3>Tworzenie ramki danych z wektorów</h3>
+<pre class="r"><code>FamilyNamas &lt;- c('Ojeciec', 'Matka','siostra','brat','pies')
+FamilyAge &lt;- c(53,52,15,8,3)
+FamilySex &lt;- c('M','F','F','M','F')
+FamilyWeights &lt;-c(92, 67, 45, 15, 3)
+
+Family &lt;- data.frame(FamilyNamas,FamilyAge, FamilySex,FamilyWeights)
+
+str(Family)</code></pre>
+<pre><code>## 'data.frame':    5 obs. of  4 variables:
+##  $ FamilyNamas  : Factor w/ 5 levels &quot;brat&quot;,&quot;Matka&quot;,..: 3 2 5 1 4
+##  $ FamilyAge    : num  53 52 15 8 3
+##  $ FamilySex    : Factor w/ 2 levels &quot;F&quot;,&quot;M&quot;: 2 1 1 2 1
+##  $ FamilyWeights: num  92 67 45 15 3</code></pre>
+<pre class="r"><code>summary(Family)</code></pre>
+<pre><code>##   FamilyNamas   FamilyAge    FamilySex FamilyWeights 
+##  brat   :1    Min.   : 3.0   F:3       Min.   : 3.0  
+##  Matka  :1    1st Qu.: 8.0   M:2       1st Qu.:15.0  
+##  Ojeciec:1    Median :15.0             Median :45.0  
+##  pies   :1    Mean   :26.2             Mean   :44.4  
+##  siostra:1    3rd Qu.:52.0             3rd Qu.:67.0  
+##               Max.   :53.0             Max.   :92.0</code></pre>
+<pre class="r"><code>Family$FamilyAge</code></pre>
+<pre><code>## [1] 53 52 15  8  3</code></pre>
+</div>
 </div>
 </div>
 

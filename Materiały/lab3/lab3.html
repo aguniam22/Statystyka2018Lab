@@ -351,14 +351,14 @@ $(document).ready(function () {
 <h2>Rozkłady</h2>
 <pre class="r"><code># rozkład jednostajny
 runif(5)</code></pre>
-<pre><code>## [1] 0.79663793 0.72961427 0.02240004 0.47304993 0.78380147</code></pre>
+<pre><code>## [1] 0.7411516 0.5260427 0.7507923 0.9587606 0.6280126</code></pre>
 <pre class="r"><code># rozkład normalny
 rnorm(10)</code></pre>
-<pre><code>##  [1]  0.0362155  0.5840151 -0.2221870 -0.5362553 -0.7420281 -2.6377916
-##  [7] -1.5729467 -0.7301521 -0.7985501 -1.0473872</code></pre>
+<pre><code>##  [1] -0.1248242  0.3591205 -0.5036405  1.3588167  0.2950635 -0.5442344
+##  [7] -0.3597340  1.0780833 -0.1208229 -1.4478987</code></pre>
 <pre class="r"><code>rnorm(10, mean = 4, sd = 2)</code></pre>
-<pre><code>##  [1] 1.934549 2.346261 4.969158 5.571069 1.869282 3.816763 5.931032
-##  [8] 2.657091 2.363569 3.834733</code></pre>
+<pre><code>##  [1]  3.65795494  0.01843847  4.20467928  3.10825855  2.86449650
+##  [6]  4.02992822 -0.02134104  5.55065807  3.47045297  0.27068899</code></pre>
 <p>Zgodnie z regułą 3 sigma prawdopodobieństwo, że zmienna losowa o standardowym rozkładzie normalnym przyjmie wartość mniejszą niż -3 lub większą od 3 jest bardzo małe. Prawdopodobieństwo to można wyznaczyć z dystrybuanty</p>
 <pre class="r"><code>pnorm(-3) + (1-pnorm(3))</code></pre>
 <pre><code>## [1] 0.002699796</code></pre>
@@ -385,16 +385,16 @@ rnorm(10)</code></pre>
 <p>Esytmację parametrów wybranego rozkładu otrzymujemy korzystając z funkcji <em>fitdistr()</em></p>
 <pre class="r"><code>test &lt;- rlnorm(100)
 test[1:10]</code></pre>
-<pre><code>##  [1] 1.9137941 0.6111758 0.8572557 1.0583028 0.4343519 0.2513239 1.1520032
-##  [8] 1.4820293 0.1806393 0.3036946</code></pre>
+<pre><code>##  [1] 2.93601621 0.27244120 0.05666434 0.85616173 0.34041644 3.29943321
+##  [7] 1.02725566 3.05050810 3.14168032 1.94366761</code></pre>
 <pre class="r"><code>MASS::fitdistr(test, &quot;normal&quot;)</code></pre>
 <pre><code>##       mean          sd    
-##   1.15714030   1.15168705 
-##  (0.11516871) (0.08143657)</code></pre>
+##   1.33462525   1.22028154 
+##  (0.12202815) (0.08628693)</code></pre>
 <pre class="r"><code>MASS::fitdistr(test, &quot;gamma&quot;)</code></pre>
 <pre><code>##      shape       rate   
-##   1.4432950   1.2473033 
-##  (0.1852751) (0.1908304)</code></pre>
+##   1.3843824   1.0372757 
+##  (0.1771404) (0.1593365)</code></pre>
 </div>
 </div>
 <div id="statystyki-opisowe" class="section level2">
