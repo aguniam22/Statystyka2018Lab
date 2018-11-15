@@ -23,43 +23,6 @@ version
 ```
 
 
-#### Git Instalation on Windows
-
-Download Git from <http://git-scm.com/downloads>.
-
-Launch `git bash` from your list of programs.
-
-in terminal, type:
-
-```{bash, eval=FALSE}
-git config --global user.name 'Your Name'
-git config --global user.email 'your@email.com'
-```
-
-### Git with RStudio
-
-1. Create an account on [GitHub](https://github.com).
-2. Go to <https://github.com/sebkaz/Statystyka2018Lab> and click on the 'Fork' button (top right conrer).
-This will create a copy of the repository in your GitHub account.
-3. Start RStudio
-4. `File > New project > Version Control` select `Git`.  Type the repository URL and choose an appropriate location on your hard-drive to store the project.
-5. Go to `Tools > Shell`
-```{bash, eval=FALSE}
-git remote add upstream https://github.com/repoURL
-git remote -v
-# new branch 
-git checkout -b imieNazwisko master
-# close shell window
-```
-6. Modify or add new r script and save your modifications.
-7. commit your changes with commit message
-8. Go to `Tools > Shell`
-```{bash, eval=FALSE}
-git push origin imieNazwisko
-```
-9. Go to GitHub and view your fork. Click on the green icon.
-10. Create pull request with some message (name and what you have done).
-
 
 
 #### RStudio

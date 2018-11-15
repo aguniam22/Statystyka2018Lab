@@ -351,14 +351,14 @@ $(document).ready(function () {
 <h2>Rozkłady</h2>
 <pre class="r"><code># rozkład jednostajny
 runif(5)</code></pre>
-<pre><code>## [1] 0.62235577 0.03149100 0.86485513 0.77410741 0.05612881</code></pre>
+<pre><code>## [1] 0.8496062 0.3888401 0.4875630 0.9536139 0.1584744</code></pre>
 <pre class="r"><code># rozkład normalny
 rnorm(10)</code></pre>
-<pre><code>##  [1] -0.4930332  1.2607265  0.6360043  0.8038490  0.4681924 -0.4927686
-##  [7] -2.4571537 -2.0261919  0.1755467  0.9237232</code></pre>
+<pre><code>##  [1]  1.87558274  0.76838736 -2.02465376 -1.30674965 -1.86975088
+##  [6]  0.69440512  1.15772706 -0.95103531  0.02109817  1.43520911</code></pre>
 <pre class="r"><code>rnorm(10, mean = 4, sd = 2)</code></pre>
-<pre><code>##  [1] 0.640324 4.678088 5.324037 4.419954 2.691730 7.599578 2.619405
-##  [8] 9.545557 4.492431 5.105678</code></pre>
+<pre><code>##  [1] 1.997290 4.145277 2.948558 1.238914 2.785695 3.914061 4.647139
+##  [8] 3.230226 4.986193 8.250333</code></pre>
 <p>Zgodnie z regułą 3 sigma prawdopodobieństwo, że zmienna losowa o standardowym rozkładzie normalnym przyjmie wartość mniejszą niż -3 lub większą od 3 jest bardzo małe. Prawdopodobieństwo to można wyznaczyć z dystrybuanty</p>
 <pre class="r"><code>pnorm(-3) + (1-pnorm(3))</code></pre>
 <pre><code>## [1] 0.002699796</code></pre>
@@ -385,16 +385,16 @@ rnorm(10)</code></pre>
 <p>Esytmację parametrów wybranego rozkładu otrzymujemy korzystając z funkcji <em>fitdistr()</em></p>
 <pre class="r"><code>test &lt;- rlnorm(100)
 test[1:10]</code></pre>
-<pre><code>##  [1] 0.3029533 1.6413943 0.9469896 1.4140772 0.2779026 0.7625428 2.1538903
-##  [8] 1.9968363 1.2933452 4.6414621</code></pre>
+<pre><code>##  [1] 2.1940882 0.4475416 0.2190062 0.9105238 0.9612465 0.5227499 0.3181098
+##  [8] 0.5857672 1.7969406 0.3675892</code></pre>
 <pre class="r"><code>MASS::fitdistr(test, &quot;normal&quot;)</code></pre>
 <pre><code>##      mean         sd    
-##   2.1990845   3.1789516 
-##  (0.3178952) (0.2247858)</code></pre>
+##   1.7656193   2.1628634 
+##  (0.2162863) (0.1529375)</code></pre>
 <pre class="r"><code>MASS::fitdistr(test, &quot;gamma&quot;)</code></pre>
-<pre><code>##      shape         rate   
-##   0.91754327   0.41723762 
-##  (0.11337515) (0.06749258)</code></pre>
+<pre><code>##      shape       rate   
+##   1.2933014   0.7324917 
+##  (0.1645943) (0.1133089)</code></pre>
 </div>
 </div>
 <div id="statystyki-opisowe" class="section level2">
@@ -448,13 +448,13 @@ head(daneSoc)</code></pre>
 <li>Jaka jest najmniejsza i największa wartość przyjmowana przez zmienną ? Wartości skrajne mogą pomagać wykrywać błędy danych.</li>
 </ol>
 <pre class="r"><code>min(x)</code></pre>
-<pre><code>## [1] -1.893192</code></pre>
+<pre><code>## [1] -0.1261334</code></pre>
 <pre class="r"><code>max(x)</code></pre>
-<pre><code>## [1] 22.91812</code></pre>
+<pre><code>## [1] 20.89757</code></pre>
 <pre class="r"><code>range(x)</code></pre>
-<pre><code>## [1] -1.893192 22.918118</code></pre>
+<pre><code>## [1] -0.1261334 20.8975682</code></pre>
 <pre class="r"><code>c(min(x),max(x))</code></pre>
-<pre><code>## [1] -1.893192 22.918118</code></pre>
+<pre><code>## [1] -0.1261334 20.8975682</code></pre>
 <pre class="r"><code>range(iris$Sepal.Length)</code></pre>
 <pre><code>## [1] 4.3 7.9</code></pre>
 <pre class="r"><code>range(daneSoc$wiek)</code></pre>
@@ -469,10 +469,10 @@ head(daneSoc)</code></pre>
 <p>i obliczmy średnią za pomocą funkcji z R i własną.</p>
 <pre class="r"><code># wynik z R
 mean(x)</code></pre>
-<pre><code>## [1] 10.02131</code></pre>
+<pre><code>## [1] 10.06314</code></pre>
 <pre class="r"><code># wynik z naszej funkcji
 my.mean(x)</code></pre>
-<pre><code>## [1] 10.02131</code></pre>
+<pre><code>## [1] 10.06314</code></pre>
 <pre class="r"><code>mean(iris$Sepal.Length)</code></pre>
 <pre><code>## [1] 5.843333</code></pre>
 <pre class="r"><code>mean(daneSoc$wiek)</code></pre>
@@ -481,7 +481,7 @@ my.mean(x)</code></pre>
 <li>Mediana - jeżli mediana jest bliska średniej to ?</li>
 </ol>
 <pre class="r"><code>median(x)</code></pre>
-<pre><code>## [1] 9.721144</code></pre>
+<pre><code>## [1] 10.06955</code></pre>
 <pre class="r"><code>median(iris$Sepal.Length)</code></pre>
 <pre><code>## [1] 5.8</code></pre>
 <pre class="r"><code>median(daneSoc$wiek)</code></pre>
@@ -509,7 +509,7 @@ return(sum((x - m) ^ 2) / (length(x) - 1)) }</code></pre>
     return(sqrt(my.var(x)))
 }</code></pre>
 <pre class="r"><code>sd(x)</code></pre>
-<pre><code>## [1] 4.101286</code></pre>
+<pre><code>## [1] 3.859761</code></pre>
 <pre class="r"><code>sd(iris$Sepal.Length)</code></pre>
 <pre><code>## [1] 0.8280661</code></pre>
 <pre class="r"><code>sd(daneSoc$wiek)</code></pre>
@@ -518,7 +518,7 @@ return(sum((x - m) ^ 2) / (length(x) - 1)) }</code></pre>
 <li>Kurtoza (miara spłaszczenia) <strong>install.packages(“e1071”)</strong></li>
 </ol>
 <pre class="r"><code>kurtosis(x)</code></pre>
-<pre><code>## [1] 0.08281291</code></pre>
+<pre><code>## [1] -0.2197811</code></pre>
 <pre class="r"><code>kurtosis(iris$Sepal.Length)</code></pre>
 <pre><code>## [1] -0.6058125</code></pre>
 <pre class="r"><code>kurtosis(daneSoc$wiek)</code></pre>
@@ -536,17 +536,17 @@ length(x)</code></pre>
 <pre><code>## [1] 1000</code></pre>
 <pre class="r"><code># rozstęp miedzykwartylowy q0.75-q0.25
 IQR(x)</code></pre>
-<pre><code>## [1] 5.287942</code></pre>
+<pre><code>## [1] 5.307338</code></pre>
 <pre class="r"><code># variancja
 var(x)</code></pre>
-<pre><code>## [1] 16.82055</code></pre>
+<pre><code>## [1] 14.89776</code></pre>
 <pre class="r"><code># Skośność
 skewness(x)</code></pre>
-<pre><code>## [1] 0.1897023</code></pre>
+<pre><code>## [1] 0.04167452</code></pre>
 <pre class="r"><code># kwantyle
 quantile(x, c(0.1,0.25,0.5,0.75,0.9))</code></pre>
 <pre><code>##       10%       25%       50%       75%       90% 
-##  4.835386  7.338805  9.721144 12.626748 15.464599</code></pre>
+##  5.188774  7.473764 10.069548 12.781102 15.069361</code></pre>
 </div>
 <div id="zmienne-jakosciowe" class="section level3">
 <h3>Zmienne jakościowe</h3>

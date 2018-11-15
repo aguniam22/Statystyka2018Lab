@@ -1,7 +1,8 @@
 ---
-title: "Laboratorium 4 "
-output: 
-  html_document: 
+title: 'Laboratorium 4 '
+output:
+  pdf_document: default
+  html_document:
     theme: paper
 ---
 
