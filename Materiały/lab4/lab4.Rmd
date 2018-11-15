@@ -1,0 +1,151 @@
+---
+title: "Laboratorium 4 "
+output: 
+  html_document: 
+    theme: paper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results='hide'}
+library("Przewodnik")
+library("e1071")
+```
+```{r}
+x <- rnorm(1000, mean = 10, sd = 4)
+```
+
+
+## Analiza graficzna
+
+### barplot
+
+Funkcja `barplot()` pozwala przedstawić dane w postaci słupków. Za argument możemy podać wektor lub macierz.
+
+Przydatne argumenty:
+
+* horiz - pion lub poziom dla słupków
+* las - kierunek opisów
+* funkcja `legend()` dodaje legendę
+* col - kolory słupków
+
+```{r}
+tab <- table( daneSoc$wyksztalcenie)
+barplot(tab, horiz = TRUE, las=1)
+
+tab2 <- table( daneSoc$plec, daneSoc$wyksztalcenie)
+barplot(tab2, las=1, beside = TRUE)
+legend("topright", c('kobieta','mezczyzna'),fill=c("grey",'black'))
+```
+
+### Histogram
+
+Histogram generowany jest za pomocą funkcji `hist()` - przedstawia rozkład wartości zmiennych ilościowych. Argumentem podstawowym funkcji jest wektor liczb.
+
+```{r}
+hist(x)
+```
+
+* breaks - określa sposób podziału zakresu zmienności
+* probability - pozwala wyświetlić frakcje zamiast liczebności w przedziałach
+```{r}
+hist(daneSoc$wiek, breaks = 15, main='Histogram zm wiek', las=1,ylab='Liczba', xlab="wiek")
+
+hist(daneSoc$wiek, breaks = 25, main='Histogram zm wiek', las=1, probability=TRUE, ylab='Czestosc', xlab="wiek", col="grey", border = "white" )
+```
+
+
+*Pakiet ggplot*
+
+```{r}
+ggplot(daneSoc, aes(x = wiek))+geom_histogram(binwidth = 5) + labs(x = "Wiek", y = "Liczba")
+
+ggplot(daneSoc, aes(x = wiek))+geom_histogram(binwidth = 1) + labs(x = "Wiek", y = "Liczba")
+```
+
+
+
+### Boxplot
+
+Do porównania rozkładów wartości w grupach bardzo często stosuje się wykres pudełkowy __boxplot__. Do jego wyznaczenia (dla zmiennej ilościowej) służy funkcja `boxplot()`. 
+
+Głównym argumentem może być wektor ale również i zbiór wektorów. 
+
+```{r}
+boxplot(x)
+
+y=rnorm(1000, mean = 0, sd =2)
+boxplot(x,y)
+```
+
+```{r}
+boxplot(daneSoc$cisnienie.rozk, daneSoc$cisnienie.skur, horizontal = TRUE, names = c('Skurczowe','Rozkurczowe'))
+```
+
+Argumentem głównym może być również formuła określająca sposób grupowania.
+
+```{r}
+boxplot(wiek~wyksztalcenie, data=daneSoc, ylab='Wiek', las=1,col='lightgrey', varwidth=TRUE)
+```
+
+### Rozkład gęstości
+
+Gładka wersja histogramu generowana jest przy pomocy funkcji `density()`. Argumentem głównym jest wektor liczb dla których chcemy otrzymać jądrowy estymator gęstości.
+```{r}
+plot(density(daneSoc$wiek), main="Rozklad wieku")
+```
+
+Za pomocą parametru __bw__ możemy regulować tzw. "szerokość okna"
+```{r}
+plot(density(daneSoc$wiek, bw=1.5), main="Rozklad wieku")
+```
+
+```{r}
+ggplot(daneSoc, aes(x = wiek)) + geom_density() + labs(x = "Wzrost", y = "gęstość")
+
+ggplot(daneSoc, aes(x = wiek, fill = plec)) + geom_density() + labs(x = "Wzrost", y = "gęstość", fill = "Płeć")
+
+ggplot(daneSoc, aes(x = wiek, fill = plec)) + geom_density() + labs(x = "Wzrost", y = "gęstość", fill = "Płeć")+facet_grid(plec ~ .)
+```
+
+*Zadanie* 
+Narysuj rozkład Couchego 
+
+```{r echo=FALSE}
+ggplot(data.frame(X=rcauchy(500,0,1)),aes(x=X))+geom_density()
+```
+
+
+### Dystrybuanta
+Dystrybuante generujemy za pomocą funkcji `ecdf()`.
+```{r}
+plot(ecdf(x))
+```
+
+```{r}
+plot(ecdf(daneSoc$wiek), main = "Dystrybuanta wieku")
+```
+
+ZADANIE
+
+Narysuj dystrybuanty wieku dla kobiet i mężczyzn (zdefiniowane w kolumnie _plec_) 
+```{r, echo=FALSE}
+m <- daneSoc[ daneSoc[, "plec"]=='mezczyzna', ]
+k <- daneSoc[ daneSoc[, "plec"]=='kobieta', ]
+plot(ecdf(m$wiek), main="wiek/plec", pch=21)
+plot(ecdf(k$wiek), add=TRUE, col="grey")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
