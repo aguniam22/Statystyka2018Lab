@@ -1,0 +1,67 @@
+help("%%")
+?log
+x<-"napis"
+y<-4
+y+2
+ls()
+rm(x)
+ls()
+print(y)
+x<-2
+x==y
+x--
+x    
+rm(x)
+ls()
+x<-2
+x==y
+x-2==y
+x-2
+x+2==y
+-3:5
+seq(1,10,by=2)
+seq=(1,2, length.out=6)
+seq(1,2,length.out=6)
+seq(1,2,length.out=3)
+month.name[5:7]
+letters[c(1,5,8:10)]
+co_drugi<-seq(1, length(LETTERS), by=2)
+co_drugi
+letters[co_drugi]
+month.name[-(2:10)]
+wzrost[c("jan", "anna")]
+wzrost<-c(jan=178, anna=157, john=198)
+wzrost
+names(wzrost)
+wzrost[c("anna", "jan")]
+wzrost[wzrost>165]
+wzrost[3]
+?matrix
+m1<-matrix(data=c(1,2,3,5), nrow=3, ncol=2)
+m1<-matrix(data=c(1,2,3,5), nrow=2, ncol=2)
+m1
+m2 <- matrix(c(4,2,5,1), 2,2)
+m2
+m3 <-matrix(data=c(1,2,3,5), 2,2, byrow = TRUE)
+m3
+m1%*%m2
+A <- matrix(1:6, ncol=2)
+A
+b <- matrix(c(-1,1), nrow = 2)
+b
+A<-matrix(c(1,2,2,4),2,2)
+A
+solve(A+2)
+A <- matrix(1:6, ncol=2)
+A
+solve(t(A) %*% A)
+svd(A)
+FamilyNamas <- c('Ojeciec', 'Matka','siostra','brat','pies')
+FamilyAge <- c(53,52,15,8,3)
+FamilySex <- c('M','F','F','M','F')
+FamilyWeights <-c(92, 67, 45, 15, 3)
+Family <- data.frame(FamilyNamas,FamilyAge, FamilySex,FamilyWeights)
+str(Family)
+summary(Family)
+FamilyAge
+Family$FamilyAge

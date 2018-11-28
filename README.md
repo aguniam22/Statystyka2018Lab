@@ -1,4 +1,4 @@
-# Statystyka Laboratorium 
+﻿# Statystyka Laboratorium ***Uwaga: zmiana***
 Strona przedmiotu Statystyka Laboratorium na WMP.SNŚ UKSW w Warszawie
 
 # Tematy zajęć
@@ -6,6 +6,8 @@ Strona przedmiotu Statystyka Laboratorium na WMP.SNŚ UKSW w Warszawie
 * [1] Instalacja i konfiguracja środowiska R. Prosty przykład czego będziemy się uczyć 
 
 # Zasady zaliczenia
+
+
 
 
 # Projekty
