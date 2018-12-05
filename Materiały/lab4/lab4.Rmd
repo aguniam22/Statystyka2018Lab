@@ -36,8 +36,8 @@ tab <- table( daneSoc$wyksztalcenie)
 barplot(tab, horiz = TRUE, las=1)
 
 tab2 <- table( daneSoc$plec, daneSoc$wyksztalcenie)
-barplot(tab2, las=1, beside = TRUE)
-legend("topright", c('kobieta','mezczyzna'),fill=c("grey",'black'))
+barplot(tab2, las=1, beside = TRUE, col=c('blue','red'))
+legend("topright",c('kobieta','mezczyzna'),fill=c('blue','red'))
 ```
 
 ### Histogram

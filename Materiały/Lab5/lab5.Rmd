@@ -1,0 +1,54 @@
+---
+title: 'Laboratorium 5 '
+output:
+  html_document:
+    theme: paper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Zadanie 
+
+### W 30 rzutach monetą 24 razu wypadł orzeł.
+
+Jakie hipotezy postawisz o tym zdarzeniu ? 
+
+- Fałszywa moneta ? 
+- Przypadek ?
+
+### Co na to statystyka ? 
+
+#### Napisz kod w R, który policzy: 
+
+
+1. Prawdopodobieństwo wypadnięcia orła $P(O)$
+2. Prawdopodobieństwo wypadnięcia dwóch orłów $P(OO)$
+3. Prawdopodobieństwo wypadnięcia dwóch orłów i reszki $P(OOR)$ 
+4. Prawdopodobięństwo wypadnięcia dwóch orłów i reszki P(2 orły, 1 reszka).
+5. Prawdopodobieństwo k sukcesów w n próbach 
+
+
+$P(k)= {{n}\choose{k}} p^k q^{n-k}$
+
+6. Prawdopodobieństwo 24 orłów w 30 rzutach.
+
+### A czy można inaczej ? 
+
+#### Napisz kod w R, który przeprowadzi jeden losowy eksperyment 30 rzutów
+
+$p=q=\frac{1}{2}$
+
+Ile otrzymałaś(eś) orłów (1) albo reszek (0) ?
+
+
+#### Napisz kod w R który wykona eksperyment 100, 1000, 10000 razy
+
+#### Narysuj histogram otrzymanych orłów w każdym eksperymencie
+
+#### Jak często pojawia się wynik 24 orłów (lub więcej)? 
+
+#### Jakie wnioski możesz wyciągnąć na poziomie istotności 5% ? 
+
+
